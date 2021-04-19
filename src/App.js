@@ -1,10 +1,12 @@
-import Navbar from './containers/Navbar';
+import Navbar from "./containers/Navbar";
+import Form from "./containers/Form";
 
 function App() {
   return (
-    
-    <Navbar />
-    
+    <>
+      <Navbar />
+      <Form />
+    </> 
   );
 }
 
