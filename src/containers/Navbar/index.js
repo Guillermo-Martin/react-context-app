@@ -8,15 +8,23 @@ import SearchIcon from "@material-ui/icons/Search";
 import Switch from "@material-ui/core/Switch";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./../../assets/styles/NavbarStyles";
+import { ThemeContext } from "./../../contexts/ThemeContext";
 
 class Navbar extends Component {
+  // tell the Navbar component to see if it's nested inside of a "ThemeContext" provider
+  static contextType = ThemeContext;
+
   render() {
+    // data from the context is located in "this.context"
+    // console.log(this.context);
+
+    const { isDarkMode } = this.context;
 
     const { classes } = this.props;
 
     return (
       <div className={classes.root}>
-        <AppBar position="static" color="primary">
+        <AppBar position="static" color={isDarkMode ? "default" : "primary"}>
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit">
               <span>🇫🇷</span>
