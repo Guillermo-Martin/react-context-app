@@ -18,7 +18,7 @@ class Navbar extends Component {
     // data from the context is located in "this.context"
     // console.log(this.context);
 
-    const { isDarkMode } = this.context;
+    const { isDarkMode, toggleTheme } = this.context;
 
     const { classes } = this.props;
 
@@ -30,7 +30,7 @@ class Navbar extends Component {
               <span>🇫🇷</span>
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit">App Title</Typography>
-            <Switch />
+            <Switch onChange={toggleTheme} />
             <div className={classes.grow} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>
